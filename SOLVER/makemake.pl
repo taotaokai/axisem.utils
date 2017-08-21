@@ -97,7 +97,8 @@ print MAKEFILE "FFLAGS += -Dsolver\n \n";
 #
 # make
 #
-print MAKEFILE "all: \$(PROG) utils \n\n";
+#print MAKEFILE "all: \$(PROG) utils \n\n";
+print MAKEFILE "all: \$(PROG) \n\n";
 
 print MAKEFILE "\$(PROG): \$(OBJS)\n";
 print MAKEFILE "    ifeq (\$(strip \$(SERIAL)),true)\n";
@@ -115,8 +116,8 @@ print MAKEFILE "\trm -f \$(PROG) \$(OBJS) *.M *.mod *.d *.il core \n\n";
 #
 # make utils (postprocessing and alike)
 # 
-print MAKEFILE "utils:\n";
-print MAKEFILE "\tcd UTILS; make\n\n";
+#print MAKEFILE "utils:\n";
+#print MAKEFILE "\tcd UTILS; make\n\n";
 #
 # Make .f90 a valid suffix
 #

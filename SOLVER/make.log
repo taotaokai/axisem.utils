@@ -1,0 +1,55 @@
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  global_parameters.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  data_io.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  data_spec.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  data_mesh.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  data_proc.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  interpolation.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  background_models.F90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  clocks.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  list.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  data_comm.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  data_time.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  commpi.F90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  commun.F90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  data_source.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  analytic_semi_mapping.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  analytic_spheroid_mapping.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  subpar_mapping.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  analytic_mapping.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  apply_masks.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  data_pointwise.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  get_mesh.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  utlity.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  def_grid.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  data_heterogeneous.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  kdtree2.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  lateral_heterogeneities.F90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  nc_helpers.F90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  nc_routines.F90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  get_model.F90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  data_matr.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  nc_snapshots.F90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  meshes_io.F90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  unrolled_loops.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  pointwise_derivatives.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  attenuation.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  parameters.F90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  def_precomp_terms.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  rotations.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  seismograms.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  source.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  stiffness_di.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  stiffness_fluid.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  stiffness_mono.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  stiffness_quad.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  wavefields_io.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  time_evol_wave.F90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  clocks_wrapper_solver.f90
+mpiifort -shared-intel  -heap-arrays 10 -O3 -xHOST -Dsolver -c  main.f90
+mpiicc -O3 -xHost   -c -o ftz.o ftz.c
+mpiicc -O3 -xHost   -c -o pthread.o pthread.c
+pthread.c(39): warning #266: function "nc_dump_strain_to_disk" declared implicitly
+     nc_dump_strain_to_disk();
+     ^
+
+mpiifort -O3 -xHost  -o axisem background_models.o commpi.o commun.o get_model.o lateral_heterogeneities.o meshes_io.o nc_helpers.o nc_routines.o nc_snapshots.o parameters.o time_evol_wave.o analytic_mapping.o analytic_semi_mapping.o analytic_spheroid_mapping.o apply_masks.o attenuation.o clocks.o clocks_wrapper_solver.o data_comm.o data_heterogeneous.o data_io.o data_matr.o data_mesh.o data_pointwise.o data_proc.o data_source.o data_spec.o data_time.o def_grid.o def_precomp_terms.o get_mesh.o global_parameters.o interpolation.o kdtree2.o list.o main.o pointwise_derivatives.o rotations.o seismograms.o source.o stiffness_di.o stiffness_fluid.o stiffness_mono.o stiffness_quad.o subpar_mapping.o unrolled_loops.o utlity.o wavefields_io.o ftz.o pthread.o 

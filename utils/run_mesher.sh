@@ -19,17 +19,25 @@ config_dir=$(readlink -f $config_dir)
 mesh_dir=$(readlink -f $mesh_dir)
 
 cp $config_dir/inparam_mesh $mesh_dir
-#bgmodel=$(grep "^BACKGROUND_MODEL" inparam_mesh | awk '{print $2}')
-#cp $fnam_extmodel external_model.bm
+
+bgmodel=$(grep "^BACKGROUND_MODEL" $config_dir/inparam_mesh | awk '{print $2}')
+if [ x$bgmodel == xexternal ]
+then
+  fnam_extmodel=$(grep "^EXT_MODEL" $config_dir/inparam_mesh | awk '{print $2}')
+  cp $config_dir/$fnam_extmodel $mesh_dir
+fi
 
 cat <<EOF > $mesh_dir/mesh.job
 #!/bin/bash
 #SBATCH -J mesh
 #SBATCH -o $mesh_dir/mesh.job.o%j
+#SBATCH -N 1
 #SBATCH -n 1
+#SBATCH -p normal
 #SBATCH -t 00:59:00
 
 cd $mesh_dir
-mpirun -n 1 $sem_dir/bin/xmesh
+#mpirun -n 1 $sem_dir/bin/xmesh
+ibrun $sem_dir/bin/xmesh
 
 EOF
